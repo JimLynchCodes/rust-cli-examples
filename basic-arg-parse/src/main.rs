@@ -4,7 +4,7 @@
 
     Note that it requires two arguments, a _pattern_ and a _path_.
 
-    An examle that runs cleanly: `cargo run -- foo .`
+    An example that runs cleanly: `cargo run -- foo .`
  */
 
 fn main() {
