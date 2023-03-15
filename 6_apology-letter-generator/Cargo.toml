@@ -1,9 +1,11 @@
 [package]
-name = "apology-letter-generator"
+name = "apology_letter_generator"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+assert_cmd = "2.0.8"
 clap = { version = "4.0", features = ["derive"] }
+predicates = "2.1.5"

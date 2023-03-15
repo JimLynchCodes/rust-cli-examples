@@ -1,3 +1,10 @@
+/**
+    An example of using the "inquire" library.
+
+    This will give you a nice interactive "yes / no" prompt
+
+    when running this program with the command: `cargo run`
+*/
 
 use inquire::Confirm;
 

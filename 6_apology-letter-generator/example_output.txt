@@ -4,7 +4,7 @@ Very Fancy, Indeed
 Very, Very Fancy,
 
 
-    Dear Foo,
+    Dear foobar,
 
     I would like to express how very deeply sorry I am for things.
 

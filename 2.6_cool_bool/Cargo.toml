@@ -1,0 +1,11 @@
+[package]
+name = "cool_bool"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+assert_cmd = "2.0.9"
+inquire = "0.6.0"
+predicates = "3.0.1"
