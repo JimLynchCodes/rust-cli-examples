@@ -1,0 +1,12 @@
+[package]
+name = "cfg_mocking"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+name = "mylib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "mybin"
+path = "src/bin.rs"
