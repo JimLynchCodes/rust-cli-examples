@@ -24,9 +24,9 @@ const THING_YOU_DID_PLACEHOLDER: &str = "*[__THING_YOU_DID__]*";
 
 fn main() {
     let args = Cli::parse();
-    
+
     let content = std::fs::read_to_string("./example_input.txt").expect("could not read file");
-    
+
     let mut new_lines: Vec<String> = Vec::new();
 
     for line in content.lines() {
@@ -39,18 +39,17 @@ fn main() {
     println!("{}", replaced_document_text);
 
     std::fs::write("./example_output.txt", replaced_document_text).unwrap();
-
 }
 
 fn get_replaced_line(line: &str, args: &Cli) -> String {
-    if line.contains(&RECIPIENT_NAME_PLACEHOLDER) {
+    if line.contains(RECIPIENT_NAME_PLACEHOLDER) {
         return replace_string_within_string(
             line,
-            &RECIPIENT_NAME_PLACEHOLDER,
+            RECIPIENT_NAME_PLACEHOLDER,
             &args.recipient_name,
         );
-    } else if line.contains(&THING_YOU_DID_PLACEHOLDER) {
-        return replace_string_within_string(line, &THING_YOU_DID_PLACEHOLDER, &args.thing_you_did);
+    } else if line.contains(THING_YOU_DID_PLACEHOLDER) {
+        return replace_string_within_string(line, THING_YOU_DID_PLACEHOLDER, &args.thing_you_did);
     }
     String::from(line)
 }
@@ -64,5 +63,5 @@ fn replace_string_within_string(original_line: &str, placeholder: &str, new_valu
 
     let replaced_line = format!("{}{}{}", beginning, new_value, end);
 
-    return replaced_line;
+    replaced_line
 }

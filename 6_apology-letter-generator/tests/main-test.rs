@@ -1,46 +1,19 @@
-// use apology_letter_generator::*;
-
-// #[test]
-// fn test_apology_letter_generated () {
-
-//     println!("foo");
-
-//     assert!(true == true);
-
-//     let expected_output = "
-//     Fancy Letterhead
-//     Very Fancy, Indeed
-//     Very, Very Fancy,
-    
-    
-//         Dear Foo,
-    
-//         I would like to express how very deeply sorry I am for things.
-    
-//         Sincerely,
-//         Your friend James";
-
-    
-
-// }
-
-// tests/cli.rs
-
 use assert_cmd::prelude::*; // Add methods on commands
-use predicates::prelude::*; // Used for writing assertions
 use std::process::Command; // Run programs
 
 #[test]
 fn file_doesnt_exist() -> Result<(), Box<dyn std::error::Error>> {
-    
-    let mut cmd = Command::cargo_bin("apology_letter_generator")?;
+    let mut cmd = Command::cargo_bin("apology_letter_generator_main")?;
 
     cmd.arg("foobar").arg("things");
-    cmd.assert()
-        .success();
-        // .failure();
+    cmd.assert().success();
 
-        // .stderr(predicate::str::contains("could not read file"));
+    let actual_file_contents =
+        std::fs::read_to_string("./example_output.txt").expect("could not read file");
+
+    let expected_output = "\nFancy Letterhead\nVery Fancy, Indeed\nVery, Very Fancy,\n\n\n    Dear foobar,\n\n    I would like to express how very deeply sorry I am for things.\n\n    Sincerely,\n    Your friend James";
+
+    assert_eq!(actual_file_contents, expected_output);
 
     Ok(())
 }
