@@ -1,0 +1,11 @@
+[package]
+name = "basic_parse_with_clap"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.0", features = ["derive"] }
+
+[dev-dependencies]
+assert_cmd = "2.0.9"
+predicates = "3.0.1"
