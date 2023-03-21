@@ -3,9 +3,18 @@ name = "cool_bool"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+name = "lib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "mybin"
+path = "src/bin.rs"
+
 [dependencies]
 inquire = "0.6.0"
 
 [dev-dependencies]
 assert_cmd = "2.0.9"
 predicates = "3.0.1"
+
