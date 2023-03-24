@@ -1,0 +1,12 @@
+[package]
+name = "image_resizer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+image = "0.24.5"
+lazy_static = "1.4.0"
+
+[dev-dependencies]
+assert_cmd = "2.0.8"
+predicates = "2.1.5"
