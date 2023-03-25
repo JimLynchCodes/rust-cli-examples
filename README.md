@@ -1,5 +1,5 @@
 # rust-cli-examples
-Examples of clean and well-tested command line utilities, written in Rust. 🦀
+Examples of clean and well-tested command line utilities, written in Rust. 🦀 👍
 
 
 ## What is this repo?
