@@ -1,6 +1,6 @@
-use std::str;
-use std::process::Command;
 use assert_cmd::prelude::*;
+use std::process::Command;
+use std::str;
 
 #[test]
 fn works_when_passed_two_args() -> Result<(), Box<dyn std::error::Error>> {
