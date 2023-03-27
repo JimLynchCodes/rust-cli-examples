@@ -1,4 +1,3 @@
-
 pub fn read_input_file() -> String {
     std::fs::read_to_string("./example_input.txt").expect("could not read file")
 }

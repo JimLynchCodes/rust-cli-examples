@@ -44,12 +44,11 @@ fn replace_string_within_string(original_line: &str, placeholder: &str, new_valu
 #[cfg(test)]
 mod replace_tests {
 
-    use crate::placeholder_replacer::replace;
     use crate::args_reader::Cli;
+    use crate::placeholder_replacer::replace;
 
     #[test]
     fn replaces_vars_in_some_text() {
-        
         let mock_cli_input = Cli {
             recipient_name: "a".to_string(),
             thing_you_did: "b".to_string(),
@@ -61,8 +60,13 @@ mod replace_tests {
         let expected_recipient_name_output = "foo a bar";
         let expected_thing_you_did_output = "foo b bar";
 
-        assert_eq!(replace(initial_with_recipient_name, &mock_cli_input), expected_recipient_name_output);
-        assert_eq!(replace(initial_with_thing_you_did, &mock_cli_input), expected_thing_you_did_output);
+        assert_eq!(
+            replace(initial_with_recipient_name, &mock_cli_input),
+            expected_recipient_name_output
+        );
+        assert_eq!(
+            replace(initial_with_thing_you_did, &mock_cli_input),
+            expected_thing_you_did_output
+        );
     }
-
 }

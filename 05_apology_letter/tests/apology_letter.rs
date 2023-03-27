@@ -11,7 +11,8 @@ fn generates_apology_letter() -> Result<(), Box<dyn std::error::Error>> {
     cmd.arg(arg1).arg(arg2);
     cmd.assert().success();
 
-    let actual_file_contents = std::fs::read_to_string("./example_output.txt").expect("could not read file");
+    let actual_file_contents =
+        std::fs::read_to_string("./example_output.txt").expect("could not read file");
 
     let expected_output = format!("\nFancy Letterhead\nVery Fancy, Indeed\nVery, Very Fancy\n\n\n    Dear {},\n\n    I would like to express how very deeply sorry I am for {}.\n\n    Sincerely,\n    Your friend James", arg1, arg2);
 
