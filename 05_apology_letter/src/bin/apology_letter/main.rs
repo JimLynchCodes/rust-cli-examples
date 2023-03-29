@@ -1,3 +1,15 @@
+//!   APOLOGY LETTER GENERATOR
+//!
+//!   This is an example of "paramaterizing a text file". The program reads the file example_input.txt
+//!
+//!   and replaces the placeholders with the input values. This is just the beginning of something VERY
+//!
+//!   cool- for example a code scaffolder, legal contract generator, personalized letter generator... 
+//!
+//!   Let you imagination go wild! We're so excited to see what you will do with this open-source project!
+//!
+//!
+//!
 //!   Notice how we have extracted the logic in this  to make it simple and clean.
 //!
 //!   The args_reader and file_manager files (which cargo turns into modules) are thin

@@ -1,15 +1,16 @@
 use image::imageops::FilterType;
 use image::DynamicImage;
+use image::GenericImageView;
 
 use crate::img_file_manager::{resize_image, save_image_file};
 
 pub fn walk_and_save(
     new_sizes: Vec<(f64, f64, String)>,
     file_output_name: &str,
-    mut img: DynamicImage,
+    img: DynamicImage,
 ) {
     for (new_width, new_height, multiplier_string) in new_sizes {
-        img = resize_image(
+        let new_img = resize_image(
             &img,
             new_width as u32,
             new_height as u32,
@@ -17,18 +18,18 @@ pub fn walk_and_save(
         );
 
         println!(
-            "Saving w:{}, h:{}, m:{}",
-            new_width, new_height, multiplier_string
+            "Saving w:{}, h:{}, f:{}, m:{}",
+            new_width, new_height, &file_output_name, multiplier_string
         );
 
-        save_image_file(&img, &file_output_name, &multiplier_string);
+        save_image_file(new_img, &file_output_name, &multiplier_string);
     }
 }
 
 #[test]
 pub fn walks_and_saves() {
     use crate::walker::walk_and_save;
-    use crate::img_file_manager::img_file_manager_tests::saved_images;
+    use crate::img_file_manager::img_file_manager_tests::SAVED_IMAGES;
 
     let mock_sizes = vec![
         (1.0, 2.0, "foo".to_string()),
@@ -48,8 +49,10 @@ pub fn walks_and_saves() {
     {
         unsafe {
             assert_eq!(
-                format!("{}_{}", mock_output_file_name, mock_multiplier_string),
-                saved_images[index]
+                format!("w:{},h:{},f:{},m:{}", 
+                mock_width, mock_height, 
+                mock_output_file_name, mock_multiplier_string),
+                SAVED_IMAGES[index]
             );
         }
     }

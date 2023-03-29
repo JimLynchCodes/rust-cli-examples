@@ -1,8 +1,5 @@
 use image::GenericImageView;
 
-#[macro_use]
-extern crate lazy_static;
-
 mod walker;
 mod img_file_manager;
 mod new_sizes_calculator;
