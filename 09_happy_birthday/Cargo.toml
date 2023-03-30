@@ -1,0 +1,12 @@
+[package]
+name = "happy_birthday"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+chrono = "0.4.24"
+inquire = { version = "0.6.0", features = ["date"] }
+
+[dev-dependencies]
+assert_cmd = "2.0.9"
+predicates = "3.0.1"
