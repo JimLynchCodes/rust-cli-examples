@@ -1,0 +1,12 @@
+[package]
+name = "random_int_generator"
+version = "0.1.0"
+edition = "2021"
+ 
+[dependencies]
+clap = { version = "*", features = ["derive"] }
+rand = "0.8.5"
+
+[dev-dependencies]
+assert_cmd = "2.0.10"
+more-asserts = "0.3.1"
