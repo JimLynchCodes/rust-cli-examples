@@ -1,12 +1,15 @@
 # rust-cli-examples
 Little example projects for learning Rust and building awesome cli tools! ⭐️
 
+<br/>
 
 ## What's Here
 
 This repo is a collection of many extremely small Rust projects.
 
 This idea is to break down otherwise _scary_ Rust code into small, approachable, and easily testable little functions.
+
+<br/>
 
 ## How To Work Through The Examples
 The numbers prefixing each folder are meant to be a recommended path to following in exploring these projects, but feel free to jump around as they are completely independent of each other!
@@ -15,11 +18,14 @@ Each folder is a completely independent Rust project, created with the `cargo ne
 
 Each project has a README that explains the problem being solved and skills practiced.
 
+<br/>
 
 ## Build Your Own "Rust Toolbox"
 By building little Rust applications like these you are documenting how to accomplish and test different things you might want a command line utility to do.
 
-So one day when you _actually want to solve some business problem_ with Rust you won't be starting from scratch and can use some of your old code and/or experiences to help you.
+If you starting building your own portfolio of Rust cli tools then one day when you _actually want to solve some business problem_ with Rust you won't be starting from scratch and can use some of your old code and/or experiences to help you!
+
+<br/>
 
 ## Exercise Style
 This repo is an example of Jim's solutions to each exercise.
@@ -97,4 +103,4 @@ Feel free to copy, modify, or distribute this code for your own personal or comm
 
 ## Thanks!
 
-I'd love to get your feedback so feel free to open an issue about whatever and/or message me on the socials @JimLynchCodes. Also, if you like this repo it would mean so much to me if you could please give it a star. ⭐️ Thanks for stopping by!
+Feel free to reach out to @JimLynchCodes on other platforms. Also, if you like this repo it would mean so much to me if you could please give it a star. ⭐️ Thanks for stopping by!
