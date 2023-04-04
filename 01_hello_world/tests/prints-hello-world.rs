@@ -3,7 +3,7 @@ use std::process::Command;
 use std::str;
 
 #[test]
-fn works() -> Result<(), Box<dyn std::error::Error>> {
+fn prints_hello_world() -> Result<(), Box<dyn std::error::Error>> {
     let output_bytes = Command::cargo_bin("hello_world")?.output()?.stdout;
 
     let output_str = match str::from_utf8(&output_bytes) {
