@@ -1,23 +1,40 @@
 # rust-cli-examples
-Small examples of cleanly coded and well-tested command line utilities, written in Rust. 🦀 👍
+Little example projects for learning Rust and building awesome cli tools! ⭐️
 
 
-## What is this repo?
+## What's Here
 
 This repo is a collection of many extremely small Rust projects.
 
-This idea is to break down otherwise _scary_ Rust code into small, approachable little functions.
+This idea is to break down otherwise _scary_ Rust code into small, approachable, and easily testable little functions.
 
-The numbers prefixing each folder are meant to be a recommended path to following in exploring these projects, but feel free to jump around as they are completely independent of each other! 
+## How To Work Through The Examples
+The numbers prefixing each folder are meant to be a recommended path to following in exploring these projects, but feel free to jump around as they are completely independent of each other!
+
+Each folder is a completely independent Rust project, created with the `cargo new my_project_name` command.
+
+Each project has a README that explains the problem being solved and skills practiced.
+
+
+## Build Your Own "Rust Toolbox"
+By building little Rust applications like these you are documenting how to accomplish and test different things you might want a command line utility to do.
+
+So one day when you _actually want to solve some business problem_ with Rust you won't be starting from scratch and can use some of your old code and/or experiences to help you.
+
+## Exercise Style
+This repo is an example of Jim's solutions to each exercise.
+
+The [rust-cli-exercises](https://github.com/JimLynchCodes/rust-cli-exercises) repo contains just the exercise prompt and an empty project for each exercise so you can work through them on your own!
+
+It is highly recommended to work through them on your own because by just reading the final code you are missing out on seeing all the compiler and linter errors along the way that led the code to end up this way...
 
 <br/>
 
 ## Running The Projects
-
-In order to encapsulate each little example as a separate project we have freely called `cargo new ___` to create many projects, each named in a way to describe the _new thing_ it introduces.
-
 First ensure you have rust and cargo installed:
-
+```bash
+cago --version
+```
 
 You can then navigate into each project folder and run the cli tool:
 ```
@@ -45,25 +62,20 @@ Then view the `tarpaulin-report.html` file in a browser.
 
 ## Why Rust For CLI Tools?
 
-There are a few reasons why Rust makes an excellent language for writing command line utilities.
+There are just a few reasons why Rust makes an excellent language for writing command line utilities:
 
-- ### GC Free Programs 
+- ### Fast Startup & Execution Time
     Often times there is a delay on startup and during heavy processing for languages with a garbage collector.
     
     Since Rust CLI programs do not have to boot up a vm or gc they can extremely fast, thus saving developer time, energy, and happiness in addition to company dollars!
 
+- ### Low Level Control With A Nice Syntax
+    
+    The borrowing, lifetimes, and `mut` keyword gives the programmer very fine control over memory usage  
+
 - ### Cargo Is Awesome
 
     Cargo makes it very easy to build and deploy cli tools, and not just to cargo- you can also publish your super efficient binary to other package managers like npm!
-
-- ### Very Small Projects
-    CLI tools, like the ones here, can be very small and self contained. These projects are meant to be an approachable way to ease into nuanced syntax of Rust. Although building massively scalable and intricate servers and websites in Rust is awesome
-
-    It can sometimes be challenging to deal with all the networking nuances that come with building, deploying, and maintaining these. Here we aim to write friendly Rust code that's _not_ scary! 
-
-- ### Great For Low Level Things
-    
-    Rust code can interact extremely well with os calls, C/C++, and other low-level things that you might want a cli tool to do.
 
 - ### Coding In Rust Is Fun!!
     
@@ -77,6 +89,12 @@ Have a cool little cli tool you want to show off to others? Feel free to add a p
 
 <br/>
 
+## MIT Open Source
+
+Feel free to copy, modify, or distribute this code for your own personal or commercial use. Use at your own risk!
+
+<br/>
+
 ## Thanks!
 
-Dang, you really are still reading this document?? Well, I'd love to get your feedback so feel free to open an issue about whatever and/or message me on the socials @JimLynchCodes. Also, if you like this repo it would mean so much to me if you could please give it a star. ⭐️ Thanks for stopping by!
+I'd love to get your feedback so feel free to open an issue about whatever and/or message me on the socials @JimLynchCodes. Also, if you like this repo it would mean so much to me if you could please give it a star. ⭐️ Thanks for stopping by!
