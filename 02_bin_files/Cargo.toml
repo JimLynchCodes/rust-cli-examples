@@ -1,0 +1,10 @@
+[package]
+name = "bin_files"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[dev-dependencies]
+assert_cmd = "2.0.9"
+predicates = "3.0.1"
