@@ -1,5 +1,5 @@
 # rust-cli-examples
-Little example projects for learning Rust and building awesome cli tools! ⭐️
+Jim's solutions and tests to the [rust-cli-exercises](https://github.com/JimLynchCodes/rust-cli-exercises)
 
 <br/>
 
