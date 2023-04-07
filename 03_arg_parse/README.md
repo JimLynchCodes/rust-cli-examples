@@ -1,5 +1,5 @@
 # Arg Parse
-Cli that reads and prints arguments!
+Build a cli tool that reads and prints arguments!
 
 <br/>
 
@@ -9,11 +9,11 @@ Imagine you want to build a cli tool. Well, if you want the user to be able to s
 <br/>
 
 ## The Exercise
-When running your Rust program take two string arguments.
+Write a Rust program that takes two string arguments.
 
 The first argument should be required (the program errors or panics if it is not supplied with `cargo run`).
 
-The second argument is optional- if it is no supplied the program continues successfully, but if it is supplied then it is printed to the console.
+The second argument is optional- if it is not supplied the program continues successfully, but if it is supplied then it is printed to the console.
 
 If both arguments are passed with `cargo run` then both are printed to the console.
 
@@ -26,7 +26,7 @@ _Note: Don't worry about handling flags and fancier things just yet! In this exe
 ## Tests
 It's up to you to decide if / how you would unit test this.
 
-There are a few integration tests you can write, where the test code more or less calls `cargo run`, passes in various number of args, and expects the proper text to be printed to the console or panicking to occur. 
+There are a few integration tests you can write, where the test code more or less calls `cargo run`, passing in a different number of args for each test, and then expecting the proper text to be printed to the console or panicking to occur. 
 
 <br/>
 
