@@ -13,8 +13,4 @@ fn main() {
         "value for the env var MY_VAR_2 is: {}",
         String::from(dotenv!("MY_VAR_2"))
     );
-    println!(
-        "value for the env var MY_VAR_3 is: {}",
-        String::from(dotenv!("MY_VAR_3"))
-    );
 }
