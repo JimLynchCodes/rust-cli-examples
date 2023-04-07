@@ -12,5 +12,4 @@ mod fn1_tests {
     fn returns_1() {
         assert_eq!(fn1(), 1);
     }
-
 }

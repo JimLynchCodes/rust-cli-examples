@@ -11,5 +11,4 @@ mod fn3_tests {
     fn returns_3() {
         assert_eq!(fn3(), 3);
     }
-
 }
