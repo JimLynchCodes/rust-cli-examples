@@ -13,13 +13,13 @@ Write a Rust program that takes two string arguments.
 
 The first argument should be required (the program errors or panics if it is not supplied with `cargo run`).
 
-The second argument is optional- if it is not supplied the program continues successfully, but if it is supplied then it is printed to the console.
+The second argument is optional- if it is not supplied the program continues successfully, and arg2 is set to the `None` Option variant.
+
+Also, the cli tool should accept an optional flag. The flag can be passed as the long version `--flag` or the short version `-f`, and the flag take a positive integer as a parameter. The cli tool should print the number to the console, or just "None" if called without the flag.
 
 If both arguments are passed with `cargo run` then both are printed to the console.
 
-Additional arguments are ignored or (cause an error).
-
-_Note: Don't worry about handling flags and fancier things just yet! In this exercise just handle the args as ___positional arguments___.
+Additional arguments are ignored (or cause an error, up to you).
 
 <br/>
 
@@ -35,6 +35,10 @@ There are a few integration tests you can write, where the test code more or les
 - Reading positional cli arguments
 
 - creating required and optional args
+
+- Flags with a short and long name
+
+- Flags that take a parameter
 
 <br/>
 

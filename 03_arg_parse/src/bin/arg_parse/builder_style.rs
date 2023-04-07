@@ -33,6 +33,5 @@ pub fn read_args() -> BuilderArgs {
             ),
             None => None,
         },
-        // flag: matches.get_one::<u32>(&FLAG_NAME).copied(),
     }
 }
