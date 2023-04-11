@@ -4,8 +4,9 @@ mod data_elements {
 use data_elements::data::initial_letters_index_map;
 
 mod pure_functions {
-    pub(super) mod colorizer;
+    pub(super) mod guess_colorizer;
     pub(super) mod guess_scorer;
+    pub(super) mod keyboard_letters_colorizer;
 }
 
 mod side_effect_inputs {

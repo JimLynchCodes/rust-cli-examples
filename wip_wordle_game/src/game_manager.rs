@@ -1,7 +1,7 @@
 use indexmap::IndexMap;
 
 use crate::data_elements::data::GuessState;
-use crate::pure_functions::colorizer::scored_guess_string;
+use crate::pure_functions::guess_colorizer::build_colored_guess_string;
 use crate::pure_functions::guess_scorer::score_guess;
 use crate::side_effect_inputs::text_input_handler::get_guess_from_user;
 use crate::side_effect_outputs::console_printer::{
@@ -37,7 +37,7 @@ pub fn prompt_for_guess(
     } else if remaining_guesses == 1 {
         print_you_lose(&scored_guesses, &secret_word);
     } else {
-        let scored_guess_str = scored_guess_string(&guess, &new_letters_guessed);
+        let scored_guess_str = build_colored_guess_string(&guess, &new_letters_guessed);
         scored_guesses.push(format!("Guess #{guesses_already_made}) {scored_guess_str}"));
 
         print_prev_scored_guesses(&scored_guesses);
