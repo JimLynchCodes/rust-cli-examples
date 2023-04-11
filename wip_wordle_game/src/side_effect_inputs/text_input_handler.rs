@@ -68,5 +68,4 @@ pub fn get_guess_from_user(
         .prompt()
         .unwrap()
         .to_lowercase()
-
 }

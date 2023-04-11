@@ -1,4 +1,3 @@
-
 mod data_elements {
     pub(super) mod data;
 }
@@ -48,5 +47,6 @@ fn main() {
         initial_letters_index_map(),
         1,
         Vec::new(),
+        args.debug,
     );
 }

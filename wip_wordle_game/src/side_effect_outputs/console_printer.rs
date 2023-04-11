@@ -24,8 +24,9 @@ pub fn print_prev_scored_guesses(scored_guesses: &Vec<String>) {
     sleep_for_cool_ux();
 }
 
-pub fn print_you_win(guesses: u8) {
-    println!("\nyou won in {guesses} guesses!\n");
+pub fn print_you_win(guesses: u8, secret_word: &str) {
+    println!("\nYou got it!! The word was \"{}\"", secret_word);
+    println!("\nYou won in {guesses} guesses!\n");
     sleep_for_cool_ux();
 }
 

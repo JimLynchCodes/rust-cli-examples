@@ -7,6 +7,9 @@ pub struct Cli {
 
     #[arg(short, long, default_value_t = 6)]
     pub guesses: u8,
+
+    #[arg(short, long, default_value_t = false)]
+    pub debug: bool,
 }
 
 pub fn read_args() -> Cli {
