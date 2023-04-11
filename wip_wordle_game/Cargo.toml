@@ -11,6 +11,7 @@ symspell = "0.4.3"
 inquire = "0.6.1"
 console = "0.15.5"
 ispell = "0.3.1"
+indexmap = "1.9.3"
 
 [dev-dependencies]
 
