@@ -4,7 +4,7 @@ pub enum Highlights {
     GRAY,
 }
 
-pub fn score_guess(guess: String, secret_word: String) -> [Highlights] {
+pub fn score_guess_old(guess: String, secret_word: String) -> [Highlights] {
     return guess.chars().enumerate().map(|(index, char)| {
         if char == secret_word.char_at(index) {
             Highlights::GREEN
@@ -15,3 +15,6 @@ pub fn score_guess(guess: String, secret_word: String) -> [Highlights] {
         }
     });
 }
+
+
+// pub fn score_guess()
