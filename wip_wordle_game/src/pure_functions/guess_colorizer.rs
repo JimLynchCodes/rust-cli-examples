@@ -1,4 +1,4 @@
-use console::{style, StyledObject};
+use console::style;
 use indexmap::IndexMap;
 
 use crate::data_elements::data::GuessState;
