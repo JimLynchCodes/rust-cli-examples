@@ -32,9 +32,8 @@ mod game_manager;
 use game_manager::prompt_for_guess;
 
 fn main() {
-    
     let args = read_args();
-    
+
     print_initial_message();
 
     let secret_word = generate_random_word(args.letters_in_word);
