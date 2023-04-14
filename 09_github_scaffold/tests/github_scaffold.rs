@@ -1,6 +1,6 @@
 use assert_cmd::prelude::*;
-use std::process::Command;
 use std::fs;
+use std::process::Command;
 
 fn delete_folder_if_it_exists(folder: &str) {
     if let Ok(metadata) = fs::metadata(format!("./cloned_repos/Integration-Test-Doc/README.md")) {
@@ -30,10 +30,10 @@ fn scaffolds_repo() -> Result<(), Box<dyn std::error::Error>> {
 }
 
 #[test]
-fn deletes_git_folder_after_scaffolding_repo() -> Result<(), std::io::Error> {
+fn deletes_git_folder_after_scaffolding_repo() -> Result<(), Box<dyn std::error::Error>> {
     delete_folder_if_it_exists("./cloned_repos/Integration-Test-Doc");
 
-    Command::cargo_bin("scaffold_from_github").unwrap();
+    Command::cargo_bin("scaffold_from_github")?;
 
     let file_path = "./cloned_repos/Integration-Test-Doc/.git/HEAD";
     let result = fs::read_to_string(file_path);

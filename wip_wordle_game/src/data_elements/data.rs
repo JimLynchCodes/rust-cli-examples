@@ -25,12 +25,14 @@ pub fn initial_letters_index_map() -> IndexMap<String, GuessState> {
 #[cfg(test)]
 mod initial_letters_index_map_tests {
 
+    use std::error::Error;
+
     use crate::data_elements::data::GuessState;
 
     use super::initial_letters_index_map;
 
     #[test]
-    fn returns_initial_letters_index_map() {
+    fn returns_initial_letters_index_map() -> Result<(), Box<dyn Error>> {
         let expected_keys_and_values = [
             ("a", GuessState::Unguessed),
             ("b", GuessState::Unguessed),
@@ -63,10 +65,12 @@ mod initial_letters_index_map_tests {
         let actual_index_map = initial_letters_index_map();
 
         for (key, value) in expected_keys_and_values {
-            let actual_val = actual_index_map.get(key).unwrap();
+            let actual_val = actual_index_map.get(key)?;
 
             assert_eq!(actual_val, &value);
         }
+
+        Ok(())
         //
         // assert_eq!(initial_letters_index_map(), expected);
     }

@@ -1,3 +1,5 @@
+use std::error::Error;
+
 use image::GenericImageView;
 
 mod walker;
@@ -18,7 +20,7 @@ static DOWN_STEP_MULTIPLIER: f64 = 2.0;
 static STEPS_IN_UP_DIRECTION: u32 = 3;
 static STEPS_IN_DOWN_DIRECTION: u32 = 3;
 
-fn main() {
+fn main() -> Result<(), Box<dyn Error>> {
     let img = read_image_file();
 
     let (original_width, original_height) = img.dimensions();
@@ -38,6 +40,8 @@ fn main() {
         original_height,
     );
 
-    walk_and_save(new_sizes_scaled_up, &FILE_OUTPUT_NAME, img.clone());
-    walk_and_save(new_sizes_scaled_down, &FILE_OUTPUT_NAME, img);
+    walk_and_save(new_sizes_scaled_up, &FILE_OUTPUT_NAME, img.clone())?;
+    walk_and_save(new_sizes_scaled_down, &FILE_OUTPUT_NAME, img)?;
+
+    Ok(())
 }

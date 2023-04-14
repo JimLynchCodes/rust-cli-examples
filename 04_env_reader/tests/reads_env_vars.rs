@@ -10,8 +10,7 @@ fn reads_env_1_and_env_2() -> Result<(), Box<dyn std::error::Error>> {
 
     let output_bytes = Command::cargo_bin("env_reader")?
         .envs([("MY_VAR_2", mock_value)])
-        .output()
-        .unwrap()
+        .output()?
         .stdout;
 
     let output_str = match str::from_utf8(&output_bytes) {
@@ -29,7 +28,7 @@ fn reads_env_1_and_env_2() -> Result<(), Box<dyn std::error::Error>> {
 
 #[test]
 fn reads_env_1_uses_default_env_2() -> Result<(), Box<dyn std::error::Error>> {
-    let output_bytes = Command::cargo_bin("env_reader")?.output().unwrap().stdout;
+    let output_bytes = Command::cargo_bin("env_reader")?.output()?.stdout;
 
     let output_str = match str::from_utf8(&output_bytes) {
         Ok(val) => val,

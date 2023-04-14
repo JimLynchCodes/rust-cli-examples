@@ -1,3 +1,5 @@
+use std::error::Error;
+
 use indexmap::IndexMap;
 use inquire::{length, required, validator::Validation, Text};
 
@@ -12,7 +14,7 @@ pub fn get_guess_from_user(
     letters_in_word: usize,
     secret_word: String,
     prev_letters_guessed: &IndexMap<String, GuessState>,
-) -> String {
+) -> Result<String, Box<dyn Error>> {
     let styled_letters_remaining = prev_letters_guessed
         .iter()
         .map(|(key, guessed_state)| get_colored_keyboard_letters(key, guessed_state))
@@ -49,7 +51,7 @@ pub fn get_guess_from_user(
         get_color_for_keyboard_letter("z", &prev_letters_guessed),
     );
 
-    Text::new("➠")
+    Ok(Text::new("➠")
         .with_help_message(&styled_letters_remaining)
         // .with_help_message(&hardcodeded_letters_remaining)
         .with_validator(required!())
@@ -65,7 +67,7 @@ pub fn get_guess_from_user(
                 ))
             }
         })
-        .prompt()
-        .unwrap()
-        .to_lowercase()
+        .prompt()?
+        .to_lowercase())
+
 }

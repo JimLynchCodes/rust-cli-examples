@@ -9,8 +9,7 @@ fn works_when_passed_two_args() -> Result<(), Box<dyn std::error::Error>> {
 
     let output_bytes = Command::cargo_bin("arg_parse")?
         .args([arg1, arg2])
-        .output()
-        .unwrap()
+        .output()?
         .stdout;
 
     let output_str = match str::from_utf8(&output_bytes) {
@@ -31,8 +30,7 @@ fn works_when_passed_one_arg() -> Result<(), Box<dyn std::error::Error>> {
 
     let output_bytes = Command::cargo_bin("arg_parse")?
         .args([arg1])
-        .output()
-        .unwrap()
+        .output()?
         .stdout;
 
     let output_str = match str::from_utf8(&output_bytes) {
@@ -55,8 +53,7 @@ fn works_when_passed_one_arg_and_short_flag() -> Result<(), Box<dyn std::error::
 
     let output_bytes = Command::cargo_bin("arg_parse")?
         .args([arg1, "-f", "42"])
-        .output()
-        .unwrap()
+        .output()?
         .stdout;
 
     let output_str = match str::from_utf8(&output_bytes) {
@@ -79,8 +76,7 @@ fn works_when_passed_two_args_and_long_flag() -> Result<(), Box<dyn std::error::
 
     let output_bytes = Command::cargo_bin("arg_parse")?
         .args([arg1, arg2, "--flag", &flag.to_string()])
-        .output()
-        .unwrap()
+        .output()?
         .stdout;
 
     let output_str = match str::from_utf8(&output_bytes) {
@@ -111,13 +107,12 @@ fn doesnt_work_when_passing_short_flag_with_no_param() -> Result<(), Box<dyn std
 
     let output_err = Command::cargo_bin("arg_parse")?
         .args([arg1, arg2, "-f"])
-        .output()
-        .unwrap()
+        .output()?
         .stderr;
 
     let expected = "error: a value is required for '--flag <FLAG>' but none was supplied\n\nFor more information, try '--help'.\n";
 
-    assert_eq!(str::from_utf8(&output_err).unwrap(), expected);
+    assert_eq!(str::from_utf8(&output_err)?, expected);
 
     Ok(())
 }
@@ -126,13 +121,12 @@ fn doesnt_work_when_passing_short_flag_with_no_param() -> Result<(), Box<dyn std
 fn doesnt_work_when_passing_long_flag_with_no_param() -> Result<(), Box<dyn std::error::Error>> {
     let output_err = Command::cargo_bin("arg_parse")?
         .args(["--flag"])
-        .output()
-        .unwrap()
+        .output()?
         .stderr;
 
     let expected = "error: a value is required for '--flag <FLAG>' but none was supplied\n\nFor more information, try '--help'.\n";
 
-    assert_eq!(str::from_utf8(&output_err).unwrap(), expected);
+    assert_eq!(str::from_utf8(&output_err)?, expected);
 
     Ok(())
 }
@@ -141,13 +135,12 @@ fn doesnt_work_when_passing_long_flag_with_no_param() -> Result<(), Box<dyn std:
 fn doesnt_work_when_passing_unrecognized_flag() -> Result<(), Box<dyn std::error::Error>> {
     let output_err = Command::cargo_bin("arg_parse")?
         .args(["--does-not-exist"])
-        .output()
-        .unwrap()
+        .output()?
         .stderr;
 
     let expected = "error: unexpected argument '--does-not-exist' found\n\n  note: to pass '--does-not-exist' as a value, use '-- --does-not-exist'\n\nUsage: arg_parse [OPTIONS] <ARG1> [ARG2]\n\nFor more information, try '--help'.\n";
 
-    assert_eq!(str::from_utf8(&output_err).unwrap(), expected);
+    assert_eq!(str::from_utf8(&output_err)?, expected);
 
     Ok(())
 }

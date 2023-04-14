@@ -8,10 +8,10 @@ pub fn score_guess(
     letters_in_word: usize,
     mut prev_letters_guessed: IndexMap<String, GuessState>,
     debug_mode: bool,
-) -> (IndexMap<String, GuessState>, bool) {
+) -> Result<(IndexMap<String, GuessState>, bool), Box<dyn Error>> {
     for i in 0..letters_in_word {
-        let guess_char = guess.chars().nth(i.into()).unwrap();
-        let secret_char = secret_word.chars().nth(i.into()).unwrap();
+        let guess_char = guess.chars().nth(i.into())?;
+        let secret_char = secret_word.chars().nth(i.into())?;
 
         if debug_mode {
             print!("\nComparing char {i} of guess {guess_char} to {secret_char}");
@@ -27,21 +27,18 @@ pub fn score_guess(
                     guess_char.to_string(),
                     GuessState::InWordFoundLocation(i as u8),
                 )
-                .unwrap();
+                .ok_or(format!("couldn't insert value: {value} for key: {key}"))?;
         } else if secret_word.contains(guess_char) {
             if debug_mode {
                 print!(", yellow");
             }
             prev_letters_guessed
-                .insert(guess_char.to_string(), GuessState::InWordUnknownLocation)
-                .unwrap();
+                .insert(guess_char.to_string(), GuessState::InWordUnknownLocation)?;
         } else {
             if debug_mode {
                 print!(", black");
             }
-            prev_letters_guessed
-                .insert(guess_char.to_string(), GuessState::GuessedNotInWord)
-                .unwrap();
+            prev_letters_guessed.insert(guess_char.to_string(), GuessState::GuessedNotInWord)?;
         }
     }
 
@@ -49,5 +46,5 @@ pub fn score_guess(
         print!("\n");
     }
 
-    (prev_letters_guessed, guess == secret_word)
+    Ok((prev_letters_guessed, guess == secret_word))
 }

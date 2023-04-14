@@ -19,11 +19,11 @@ pub fn get_colored_keyboard_letters(text: &str, guessed_state: &GuessState) -> S
 pub fn get_color_for_keyboard_letter(
     letter: &str,
     letters_guessed: &IndexMap<String, GuessState>,
-) -> StyledObject<String> {
-    match letters_guessed.get(letter).unwrap() {
+) -> Result<StyledObject<String>, Box<dyn Error>> {
+    Ok(match letters_guessed.get(letter)? {
         GuessState::InWordFoundLocation(_) => style(letter.to_string()).magenta().on_green(),
         GuessState::InWordUnknownLocation => style(letter.to_string()).magenta().on_yellow(),
         GuessState::GuessedNotInWord => style(letter.to_string()).black().on_black(),
         GuessState::Unguessed => style(letter.to_string()).black().on_white(),
-    }
+    })
 }

@@ -1,35 +1,41 @@
 const RECIPIENT_NAME_PLACEHOLDER: &str = "*[__RECIPIENT_NAME__]*";
 const THING_YOU_DID_PLACEHOLDER: &str = "*[__THING_YOU_DID__]*";
 
+use std::error::Error;
+
 use crate::args_reader::Cli;
 
-pub fn replace(content: &str, args: &Cli) -> String {
+pub fn replace(content: &str, args: &Cli) -> Result<String, Box<dyn Error>> {
     let mut new_lines: Vec<String> = Vec::new();
 
     for line in content.lines() {
-        let replaced_line = get_replaced_line(line, &args);
+        let replaced_line = get_replaced_line(line, &args)?;
         new_lines.push(replaced_line);
     }
 
     let replaced_document_text: String = new_lines.join("\n");
 
-    replaced_document_text
+    Ok(replaced_document_text)
 }
 
-fn get_replaced_line(line: &str, args: &Cli) -> String {
+fn get_replaced_line(line: &str, args: &Cli) -> Result<String, Box<dyn Error>> {
     if line.contains(RECIPIENT_NAME_PLACEHOLDER) {
-        return replace_string_within_string(
+        return Ok(replace_string_within_string(
             line,
             RECIPIENT_NAME_PLACEHOLDER,
             &args.recipient_name,
-        );
+        )?);
     } else if line.contains(THING_YOU_DID_PLACEHOLDER) {
         return replace_string_within_string(line, THING_YOU_DID_PLACEHOLDER, &args.thing_you_did);
     }
-    String::from(line)
+    Ok(String::from(line))
 }
 
-fn replace_string_within_string(original_line: &str, placeholder: &str, new_value: &str) -> String {
+fn replace_string_within_string(
+    original_line: &str,
+    placeholder: &str,
+    new_value: &str,
+) -> Result<String, Box<dyn Error>> {
     let first_char_index = original_line.find(placeholder).unwrap();
     let last_char_index = first_char_index + placeholder.chars().count();
 
@@ -38,17 +44,19 @@ fn replace_string_within_string(original_line: &str, placeholder: &str, new_valu
 
     let replaced_line = format!("{}{}{}", beginning, new_value, end);
 
-    replaced_line
+    Ok(replaced_line)
 }
 
 #[cfg(test)]
 mod replace_tests {
 
+    use std::error::Error;
+
     use crate::args_reader::Cli;
     use crate::placeholder_replacer::replace;
 
     #[test]
-    fn replaces_vars_in_some_text() {
+    fn replaces_vars_in_some_text() -> Result<(), Box<dyn Error>> {
         let mock_cli_input = Cli {
             recipient_name: "a".to_string(),
             thing_you_did: "b".to_string(),
@@ -61,12 +69,14 @@ mod replace_tests {
         let expected_thing_you_did_output = "foo b bar";
 
         assert_eq!(
-            replace(initial_with_recipient_name, &mock_cli_input),
+            replace(initial_with_recipient_name, &mock_cli_input)?,
             expected_recipient_name_output
         );
         assert_eq!(
-            replace(initial_with_thing_you_did, &mock_cli_input),
+            replace(initial_with_thing_you_did, &mock_cli_input)?,
             expected_thing_you_did_output
         );
+
+        Ok(())
     }
 }

@@ -1,3 +1,5 @@
+use std::error::Error;
+
 use console::style;
 use indexmap::IndexMap;
 
@@ -16,18 +18,18 @@ fn get_score_style_for_guess_state(text: char, guess_state: &GuessState) -> Stri
     }
 }
 
-pub fn build_colored_guess_string(word: &str, new_letters: &IndexMap<String, GuessState>) -> String {
+pub fn build_colored_guess_string(
+    word: &str,
+    new_letters: &IndexMap<String, GuessState>,
+) -> Result<String, Box<dyn Error>> {
     println!("\nScoring guess...\n");
 
-    word.chars()
+    Ok(word
+        .chars()
         .into_iter()
-        .map({
-            |char| {
-                get_score_style_for_guess_state(char, new_letters.get(&char.to_string()).unwrap())
-            }
-        })
+        .map({ |char| get_score_style_for_guess_state(char, new_letters.get(&char.to_string())?) })
         .collect::<Vec<String>>()
-        .join("")
+        .join(""))
 }
 
 #[cfg(test)]
@@ -38,10 +40,8 @@ mod build_colored_guess_tests {
 
     use super::build_colored_guess_string;
 
-
     #[test]
-    fn builds_colored_guess() {
-
+    fn builds_colored_guess() -> Result<String, Box<dyn Error>> {
         let mock_word = "abc";
 
         let letters_map = IndexMap::from([
@@ -51,12 +51,10 @@ mod build_colored_guess_tests {
             // ("d".to_string(), GuessState::Unguessed),
         ]);
 
-        let actual = build_colored_guess_string(mock_word, &letters_map);
+        let actual = build_colored_guess_string(mock_word, &letters_map)?;
 
         let expected = "\u{1b}[37m\u{1b}[40ma\u{1b}[0m\u{1b}[30m\u{1b}[42mb\u{1b}[0m\u{1b}[30m\u{1b}[43mc\u{1b}[0m";
 
         assert_eq!(actual, expected);
-
     }
-
 }

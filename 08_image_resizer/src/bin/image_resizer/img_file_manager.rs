@@ -1,5 +1,6 @@
 use image::imageops::FilterType;
 use image::DynamicImage;
+use std::error::Error;
 
 #[cfg(not(test))]
 pub fn read_image_file() -> DynamicImage {
@@ -8,7 +9,7 @@ pub fn read_image_file() -> DynamicImage {
 
 #[cfg(test)]
 pub fn read_image_file() -> DynamicImage {
-    DynamicImage::new_rgb8(0,0)
+    DynamicImage::new_rgb8(0, 0)
 }
 
 pub fn resize_image(
@@ -21,21 +22,30 @@ pub fn resize_image(
 }
 
 #[cfg(not(test))]
-pub fn save_image_file(img: &DynamicImage, file_output_name: &str, multiplier_string: &str) {
-    img.save(format!(
+pub fn save_image_file(
+    img: &DynamicImage,
+    file_output_name: &str,
+    multiplier_string: &str,
+) -> Result<(), Box<dyn Error>> {
+    Ok(img.save(format!(
         "output_images/{}_{}x.png",
         file_output_name, multiplier_string
-    ));
+    ))?)
 }
 
 #[cfg(test)]
-pub fn save_image_file(img: &DynamicImage, file_output_name: &str, multiplier_string: &str) {
-    
+pub fn save_image_file(
+    img: &DynamicImage,
+    file_output_name: &str,
+    multiplier_string: &str,
+) -> Result<(), Box<dyn Error>> {
     use img_file_manager_tests::saved_images;
 
     unsafe {
         saved_images.push(format!("{}_{}", file_output_name, multiplier_string));
     }
+
+    Ok(())
 }
 
 #[cfg(test)]
