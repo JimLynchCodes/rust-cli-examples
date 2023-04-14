@@ -6,12 +6,13 @@ use crate::shared_constants::URL;
 
 #[cfg(not(test))]
 pub fn get_some_json() -> Result<Value, Box<dyn Error>> {
-    let resp = get(URL)?.text()?;
-    serde_json::from_str::<Value>(&resp).map_err(Box::<dyn Error>::from)
+    let response = get(URL)?.text()?;
+    let serde_result = serde_json::from_str::<Value>(&response)?;
+    Ok(serde_result)
 }
 
 #[cfg(test)]
 pub fn get_some_json() -> Result<Value, Box<dyn Error>> {
     let input = r#"{"index":0,"name":"AB/CDE/FG/402/test_int4","sts":"on","time":"2021-06-05 03:28:24.044284300 UTC","value":8}"#;
-    serde_json::from_str(input).map_err(Box::<dyn Error>::from)
+    Ok(serde_json::from_str(input)?)
 }

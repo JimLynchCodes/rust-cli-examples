@@ -3,6 +3,7 @@ use std::process::Command;
 use std::str;
 
 #[test]
+#[ignore]
 /// Note how this integration test actually makes the api calls
 fn gets_and_prints_json() -> Result<(), Box<dyn std::error::Error>> {
     let output_bytes = Command::cargo_bin("get_json")?.output().unwrap().stdout;

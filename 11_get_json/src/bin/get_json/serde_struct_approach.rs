@@ -16,14 +16,16 @@ pub struct User {
 }
 
 #[cfg(not(test))]
+/// Makes real GET call to the hardcoded endpoint to get data
+/// Cargo run, final binary, and integration tests will use this implementation
 pub fn get_some_json() -> Result<User, Box<dyn std::error::Error>> {
     let response = get(URL)?.text()?;
     let json: Value = serde_json::from_str(&response)?;
-
-    serde_json::from_value(json).map_err(Box::<dyn Error>::from)
+    Ok(serde_json::from_value(json)?)
 }
 
 #[cfg(test)]
+/// This hardcoded implementation will be used for ALL unit tests
 pub fn get_some_json() -> Result<User, Box<dyn Error>> {
     Ok(User {
         id: 1,
