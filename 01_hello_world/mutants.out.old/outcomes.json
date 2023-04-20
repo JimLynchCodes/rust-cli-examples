@@ -1,0 +1,78 @@
+{
+  "outcomes": [
+    {
+      "scenario": "Baseline",
+      "log_path": "/Users/jim/Git-Projects/rust-cli-examples/01_hello_world/mutants.out/log/baseline.log",
+      "summary": "Success",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 3.444407674,
+          "process_status": "Success",
+          "argv": [
+            "/Users/jim/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo",
+            "build",
+            "--tests",
+            "--workspace"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.318795879,
+          "process_status": "Success",
+          "argv": [
+            "/Users/jim/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo",
+            "test",
+            "--workspace"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "package": "hello_world",
+          "file": "src/main.rs",
+          "line": 1,
+          "function": "main",
+          "return_type": "",
+          "replacement": "()"
+        }
+      },
+      "log_path": "/Users/jim/Git-Projects/rust-cli-examples/01_hello_world/mutants.out/log/src__main.rs_line_1.log",
+      "summary": "CaughtMutant",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 0.262332373,
+          "process_status": "Success",
+          "argv": [
+            "/Users/jim/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo",
+            "build",
+            "--tests",
+            "--package",
+            "hello_world"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.263303274,
+          "process_status": "Failure",
+          "argv": [
+            "/Users/jim/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo",
+            "test",
+            "--package",
+            "hello_world"
+          ]
+        }
+      ]
+    }
+  ],
+  "total_mutants": 1,
+  "missed": 0,
+  "caught": 1,
+  "timeout": 0,
+  "unviable": 0,
+  "success": 0,
+  "failure": 0
+}

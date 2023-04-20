@@ -31,3 +31,43 @@ It's up to you to decide if / how you would unit test this, but it would be nice
 - Creating an integration test
 
 - Running a Rust project and tests
+
+<br/>
+
+## Commands
+
+Run cli tool locally:
+```bash
+cargo run
+```
+
+Formatting / linting:
+```bash
+cargo fmt
+cargo clippy
+```
+
+Run unit & integration tests:
+```bash
+cargo test
+```
+
+Run Units Tests Wih Code Coverage:
+```bash
+cargo tarpaulin
+```
+
+Run Mutation Test:
+```bash
+cargo mutants
+```
+
+Deploy to Cargo:
+```bash
+TODO...
+```
+
+Deploy to NPM:
+```bash
+TODO...
+```
