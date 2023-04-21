@@ -42,8 +42,8 @@ pub fn print_you_lose(scored_guesses: &Vec<String>, secret_word: &str) {
 
 pub fn print_deciding_if_valid_english_word(word: &str) {
     println!(
-        "\n\n{}",
-        format!("Deciding if {word} is a valid english word...")
+        "{}",
+        format!("\n\nDeciding if {word} is a valid english word...\n")
     );
     sleep_for_cool_ux();
 }

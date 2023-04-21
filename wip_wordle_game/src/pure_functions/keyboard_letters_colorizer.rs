@@ -1,3 +1,5 @@
+use std::error::Error;
+
 use console::{style, StyledObject};
 use indexmap::IndexMap;
 
@@ -20,10 +22,11 @@ pub fn get_color_for_keyboard_letter(
     letter: &str,
     letters_guessed: &IndexMap<String, GuessState>,
 ) -> Result<StyledObject<String>, Box<dyn Error>> {
-    Ok(match letters_guessed.get(letter)? {
-        GuessState::InWordFoundLocation(_) => style(letter.to_string()).magenta().on_green(),
-        GuessState::InWordUnknownLocation => style(letter.to_string()).magenta().on_yellow(),
-        GuessState::GuessedNotInWord => style(letter.to_string()).black().on_black(),
-        GuessState::Unguessed => style(letter.to_string()).black().on_white(),
+    Ok(match letters_guessed.get(letter) {
+        Some(GuessState::InWordFoundLocation(_)) => style(letter.to_string()).magenta().on_green(),
+        Some(GuessState::InWordUnknownLocation) => style(letter.to_string()).magenta().on_yellow(),
+        Some(GuessState::GuessedNotInWord) => style(letter.to_string()).black().on_black(),
+        Some(GuessState::Unguessed) => style(letter.to_string()).black().on_white(),
+        None => panic!("couldn't get proper color..."),
     })
 }

@@ -65,7 +65,7 @@ mod initial_letters_index_map_tests {
         let actual_index_map = initial_letters_index_map();
 
         for (key, value) in expected_keys_and_values {
-            let actual_val = actual_index_map.get(key)?;
+            let actual_val = actual_index_map.get(key).unwrap();
 
             assert_eq!(actual_val, &value);
         }

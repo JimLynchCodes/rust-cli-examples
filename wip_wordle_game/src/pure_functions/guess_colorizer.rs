@@ -27,13 +27,17 @@ pub fn build_colored_guess_string(
     Ok(word
         .chars()
         .into_iter()
-        .map({ |char| get_score_style_for_guess_state(char, new_letters.get(&char.to_string())?) })
+        .map(|char| {
+            get_score_style_for_guess_state(char, new_letters.get(&char.to_string()).unwrap())
+        })
         .collect::<Vec<String>>()
         .join(""))
 }
 
 #[cfg(test)]
 mod build_colored_guess_tests {
+    use std::error::Error;
+
     use indexmap::IndexMap;
 
     use crate::data_elements::data::GuessState;
@@ -41,7 +45,7 @@ mod build_colored_guess_tests {
     use super::build_colored_guess_string;
 
     #[test]
-    fn builds_colored_guess() -> Result<String, Box<dyn Error>> {
+    fn builds_colored_guess() -> Result<(), Box<dyn Error>> {
         let mock_word = "abc";
 
         let letters_map = IndexMap::from([
@@ -56,5 +60,7 @@ mod build_colored_guess_tests {
         let expected = "\u{1b}[37m\u{1b}[40ma\u{1b}[0m\u{1b}[30m\u{1b}[42mb\u{1b}[0m\u{1b}[30m\u{1b}[43mc\u{1b}[0m";
 
         assert_eq!(actual, expected);
+
+        Ok(())
     }
 }
