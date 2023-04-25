@@ -15,7 +15,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     let where_to_clone = "./cloned_repos/";
     
-    let repo_name = get_repo_name(url)?;
+    let repo_name = get_repo_name(url);
 
     clone_repo(&url, &where_to_clone, &repo_name)?;
 

@@ -2,7 +2,7 @@ pub fn fn1() -> u8 {
     1
 }
 
-// Putting the tests in a different module prevents them being packaged with the final build.
+// Putting the tests in a different module prevents them being unnecessarily packaged into the final binary.
 #[cfg(test)]
 mod fn1_tests {
 

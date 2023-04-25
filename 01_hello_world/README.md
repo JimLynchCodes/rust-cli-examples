@@ -6,7 +6,7 @@ A barebones project that just prints the text "Hello, World"!
 ## Backstory
 Imagine you want to make the simplest Rust project possible- just the stuff needed to make a Rust project run.
 
-The idea here is that if you can write a Rust project that compiles, runs, and does _something_ then you can build off this and build all the things you could ever imagine! 🌈
+The idea here is that if you can write a Rust project that compiles, runs, and does _something_ then you can build off this and create all the things you could ever imagine! 🌈
 
 <br/>
 
@@ -16,9 +16,19 @@ Write the simplest Rust project possible that prints some form of, "Hello, World
 <br/>
 
 ## Tests
-The general pattern for where to put tests is Rust is that _unit tests_ should be in the same file it's function is defined, and _integration tests_ are put in the _tests_ folder next to the _src_ folder.
+Here I have one maybe pointless unit test just checking that the main function returns nothing.
 
-It's up to you to decide if / how you would unit test this, but it would be nice to at least have one integration test that asserts that the correct output was printed to the console.
+I also have an integration test which verifies that the text "Hello, world!" is printed to the console and that the prompt appears on a new line.
+
+I'm also adding some other interesting testing tools such as:
+
+- Running unit tests with a code coverage output
+
+- Running mutation tests to test the unit tests
+
+- Running fuzz tests to check for other unexpected behavior
+
+
 
 <br/>
 
@@ -34,7 +44,7 @@ It's up to you to decide if / how you would unit test this, but it would be nice
 
 <br/>
 
-## Commands
+## Dev Commands
 
 Run cli tool locally:
 ```bash
@@ -57,7 +67,7 @@ Run Units Tests Wih Code Coverage:
 cargo tarpaulin
 ```
 
-Run Mutation Test:
+Run Mutation Testing:
 ```bash
 cargo mutants
 ```

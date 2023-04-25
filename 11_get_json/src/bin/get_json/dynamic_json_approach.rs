@@ -1,8 +1,8 @@
-use reqwest::blocking::get;
 use serde_json::Value;
 use std::error::Error;
 
 use crate::shared_constants::URL;
+use reqwest::blocking::get;
 
 #[cfg(not(test))]
 pub fn get_some_json() -> Result<Value, Box<dyn Error>> {

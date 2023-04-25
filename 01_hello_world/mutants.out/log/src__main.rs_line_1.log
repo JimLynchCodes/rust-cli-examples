@@ -19,8 +19,8 @@
 
 
 *** run /Users/jim/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo build --tests --package hello_world
-   Compiling hello_world v0.1.0 (/private/var/folders/01/26_dtxgn7f11tgz62vcqdh840000gn/T/cargo-mutants-01_hello_world-2T5yZ9.tmp)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.37s
+   Compiling hello_world v0.1.0 (/private/var/folders/01/26_dtxgn7f11tgz62vcqdh840000gn/T/cargo-mutants-01_hello_world-jLJnht.tmp)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.38s
 
 *** result: Success
 
@@ -50,7 +50,7 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 failures:
     prints_hello_world
 
-test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
 
 error: test failed, to rerun pass `-p hello_world --test prints-hello-world`
 

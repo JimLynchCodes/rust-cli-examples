@@ -1,1 +1,0 @@
-src/main.rs:1: replace main with ()
