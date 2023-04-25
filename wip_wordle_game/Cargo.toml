@@ -8,7 +8,7 @@ clap = { version = "4.1.11", features = ["derive"] }
 random_word = "0.3.0"
 lingua = { version = "1.4.0", default-features = false, features = ["english", "italian", "spanish"] }
 symspell = "0.4.3"
-inquire = "0.6.1"
+inquire = { version = "0.6.1", features = ["console"] }
 ispell = "0.3.1"
 indexmap = "1.9.3"
 console = "0.15.5"

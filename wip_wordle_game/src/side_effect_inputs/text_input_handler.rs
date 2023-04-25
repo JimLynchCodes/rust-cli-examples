@@ -5,9 +5,7 @@ use inquire::{length, required, validator::Validation, Text};
 
 use crate::{
     data_elements::data::GuessState,
-    pure_functions::keyboard_letters_colorizer::{
-        get_color_for_keyboard_letter, get_colored_keyboard_letters,
-    },
+    pure_functions::keyboard_letters_colorizer::get_colored_keyboard_letters,
     side_effect_lib_wrappers::english_word_validator::is_valid_english_word,
     side_effect_outputs::console_printer::print_deciding_if_valid_english_word,
 };

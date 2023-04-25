@@ -1,7 +1,7 @@
 // use lingua::Language::English;
 // use lingua::{Language, LanguageDetector, LanguageDetectorBuilder};
 
-use symspell::{AsciiStringStrategy, SymSpell};
+// use symspell::{AsciiStringStrategy, SymSpell};
 use zspell::{DictBuilder, Dictionary};
 
 // TODO - make this faster... 😅
