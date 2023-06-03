@@ -82,7 +82,7 @@ Deploy to Cargo & NPM:
 
 Then deploy (with -n flag for a different name):
 ```bash
-rust-to-npm-cli deploy -b -n @jimlynchcodes/hello-world-rs
+rust-to-npm-cli deploy -b -n @jimlynchcodes/01-hello-world-rs
 ```
 
 To install via npm:
