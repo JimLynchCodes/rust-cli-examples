@@ -1,5 +1,5 @@
 {
-  "name": "jimlynchcodes/hello-world-rs",
+  "name": "jimlynchcodes-hello-world-rs",
   "version": "0.0.1",
   "description": "Jim's solution to exercise 01_hello_world of the rust-cli-exercises!",
   "main": "start.js",
