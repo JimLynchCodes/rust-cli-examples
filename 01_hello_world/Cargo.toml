@@ -1,7 +1,15 @@
 [package]
-name = "hello_world"
-version = "0.1.0"
+name = "hello-world-rs"
+version = "0.0.1"
 edition = "2021"
+description = "Jim's solution to exercise 01_hello_world of the rust-cli-exercises!"
+repository = "https://github.com/JimLynchCodes/rust-cli-examples"
+readme = "README.md"
+keywords = ["rust", "rustlang", "cli", "cli-tool", "npm", "hello-world"]
+categories = ["command-line-utilities", "cli", "hello-world", "rust"]
+license = "MIT"
+homepage = "https://github.com/JimLynchCodes/rust-cli-examples"
+authors = ["Jim Lynch - jim.lynch@evaluates2.com"]
 
 [dev-dependencies]
 assert_cmd = "2.0.10"

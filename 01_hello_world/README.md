@@ -28,8 +28,6 @@ I'm also adding some other interesting testing tools such as:
 
 - Running fuzz tests to check for other unexpected behavior
 
-
-
 <br/>
 
 ## Skills Practiced
@@ -67,17 +65,32 @@ Run Units Tests Wih Code Coverage:
 cargo tarpaulin
 ```
 
+Run Tests Automatically On Code Change (Aka "Watch Mode"):
+```bash
+bacon test
+```
+
 Run Mutation Testing:
 ```bash
 cargo mutants
 ```
 
-Deploy to Cargo:
+Deploy to Cargo & NPM:
+
+- Increment version in `Cargo.toml`
+- Sign in with `cargo login` and `npm adduser`
+
+Then deploy (with -n flag for a different name):
 ```bash
-TODO...
+rust-to-npm-cli deploy -b -n @jimlynchcodes/hello-world-rs
 ```
 
-Deploy to NPM:
+To install via npm:
 ```bash
-TODO...
+npm i -g @jimlynchcodes/hello-world-rs
+```
+
+Then run:
+```bash
+hello-world-rs
 ```

@@ -7,7 +7,7 @@
       "phase_results": [
         {
           "phase": "Build",
-          "duration": 43.468014742,
+          "duration": 41.014250973,
           "process_status": "Success",
           "argv": [
             "/Users/jim/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo",
@@ -18,7 +18,7 @@
         },
         {
           "phase": "Test",
-          "duration": 0.470720898,
+          "duration": 0.487327503,
           "process_status": "Success",
           "argv": [
             "/Users/jim/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo",
@@ -44,7 +44,7 @@
       "phase_results": [
         {
           "phase": "Build",
-          "duration": 0.422847583,
+          "duration": 0.417674467,
           "process_status": "Success",
           "argv": [
             "/Users/jim/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo",
@@ -56,7 +56,7 @@
         },
         {
           "phase": "Test",
-          "duration": 0.369150866,
+          "duration": 0.317921011,
           "process_status": "Failure",
           "argv": [
             "/Users/jim/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo",

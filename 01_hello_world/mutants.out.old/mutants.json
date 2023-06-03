@@ -1,0 +1,10 @@
+[
+  {
+    "package": "hello_world",
+    "file": "src/main.rs",
+    "line": 1,
+    "function": "main",
+    "return_type": "",
+    "replacement": "()"
+  }
+]

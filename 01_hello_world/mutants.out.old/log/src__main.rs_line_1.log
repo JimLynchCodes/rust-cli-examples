@@ -19,13 +19,13 @@
 
 
 *** run /Users/jim/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo build --tests --package hello_world
-   Compiling hello_world v0.1.0 (/private/var/folders/01/26_dtxgn7f11tgz62vcqdh840000gn/T/cargo-mutants-01_hello_world-yz1zkX.tmp)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.36s
+   Compiling hello_world v0.1.0 (/private/var/folders/01/26_dtxgn7f11tgz62vcqdh840000gn/T/cargo-mutants-01_hello_world-jLJnht.tmp)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.38s
 
 *** result: Success
 
 *** run /Users/jim/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo test --package hello_world
-    Finished test [unoptimized + debuginfo] target(s) in 0.16s
+    Finished test [unoptimized + debuginfo] target(s) in 0.15s
      Running unittests src/main.rs (target/debug/deps/hello_world-fd779e0bd54d819f)
 
 running 1 test
