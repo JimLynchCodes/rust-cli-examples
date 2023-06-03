@@ -29,8 +29,8 @@ if (fs.existsSync(cargoDir)) {
     
 const features = process.env.npm_config_features ? `--features ${process.env.npm_config_features.replace(",", " ")}` : ""; 
 
-console.log(`Installing and compiling hello-world-rs 0.0.3 ${features} ...`);
-exec(`cargo install hello-world-rs --vers 0.0.3 ${features}`, (error, stdout, stderr) => {
+console.log(`Installing and compiling hello-world-rs 0.0.1 ${features} ...`);
+exec(`cargo install hello-world-rs --vers 0.0.1 ${features}`, (error, stdout, stderr) => {
   console.log(stdout);
   if (error || stderr) {
     console.log(error || stderr);

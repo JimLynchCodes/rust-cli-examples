@@ -1,6 +1,6 @@
 [package]
 name = "hello-world-rs"
-version = "0.0.3"
+version = "0.0.1"
 edition = "2021"
 description = "Jim's solution to exercise 01_hello_world of the rust-cli-exercises!"
 repository = "https://github.com/JimLynchCodes/rust-cli-examples"
