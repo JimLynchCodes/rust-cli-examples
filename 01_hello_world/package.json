@@ -1,6 +1,6 @@
 {
   "name": "@jimlynchcodes/hello-world-rs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Jim's solution to exercise 01_hello_world of the rust-cli-exercises!",
   "main": "start.js",
   "directories": {
@@ -15,7 +15,7 @@
     "type": "git",
     "url": "https://github.com/JimLynchCodes/rust-cli-examples.git"
   },
-  "keywords": ["rust","rustlang","cli","cli-tool","npm","hello-world"],
+  "keywords": ["rust","rustlang","cli","npm","hello-world"],
   "author": "Jim Lynch - jim.lynch@evaluates2.com",
   "license": "MIT",
   "bugs": {

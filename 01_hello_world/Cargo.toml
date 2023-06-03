@@ -1,11 +1,11 @@
 [package]
 name = "hello-world-rs"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2021"
 description = "Jim's solution to exercise 01_hello_world of the rust-cli-exercises!"
 repository = "https://github.com/JimLynchCodes/rust-cli-examples"
 readme = "README.md"
-keywords = ["rust", "rustlang", "cli", "cli-tool", "npm", "hello-world"]
+keywords = ["rust", "rustlang", "cli", "npm", "hello-world"]
 categories = ["command-line-utilities", "cli", "hello-world", "rust"]
 license = "MIT"
 homepage = "https://github.com/JimLynchCodes/rust-cli-examples"
