@@ -36,7 +36,7 @@ It is highly recommended to work through them on your own because by just readin
 
 <br/>
 
-## Running The Projects
+## Running Each Project
 First ensure you have rust and cargo installed:
 ```bash
 cago --version
