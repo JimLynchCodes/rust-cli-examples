@@ -1,5 +1,3 @@
-use inquire::InquireError;
-
 pub fn get_response_from_answer(ans: bool) -> String {
     if ans {
         "You chose yes!".to_string()
@@ -10,8 +8,6 @@ pub fn get_response_from_answer(ans: bool) -> String {
 
 #[cfg(test)]
 mod responder_tests {
-
-    use inquire::InquireError;
 
     use crate::responder::get_response_from_answer;
 

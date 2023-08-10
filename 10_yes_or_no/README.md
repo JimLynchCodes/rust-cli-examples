@@ -26,9 +26,21 @@ After the user submits a choice either "You said yes!" or "You say no..." should
 <br/>
 
 ## Tests
-It's up to you to decide how to unit test this code.
 
-Write an integration test that simulates sending various inputs as a response to the yes or no question and verifies that the correct output is printed to the console.
+### -- Unit tests --
+
+- Asker: check that "ask_yes_or_no" returns a properly built inqure Confirm object.
+
+- Responder: call with true, expect to return true string. Another test, same but for false case.
+
+- Main: unit test for main where you mock "ask_yes_or_no", expect "get_response_from_answer" to be called with mocked response from "ask_yes_or_no" and mock its own return value. expect response from "get_response_from_answer" to be printed, and expect to return Ok of unit.
+
+### -- Integration Tests --
+
+- Run the binary using Cargo_bin, send Enter, y, Y, yes, YES, yEs, yeS, Yes, YeS, etc- expect stdout to have yes message.
+
+send variations of "no" and expect no message to be displayed.
+
 <br/>
 
 ## Skills Practiced

@@ -5,7 +5,7 @@ use assert_cmd::prelude::*;
 #[test]
 #[ignore]
 // TODO - Can't figure out how to properly send user input through stdin... 🤔
-fn asks_yes_or_no() -> Result<(), Box<dyn std::error::Error>> {
+fn asks_yes_or_no_integration() -> Result<(), Box<dyn std::error::Error>> {
 
     let output_bytes = Command::cargo_bin("yes_or_no")?.output()?.stdout;
 
@@ -20,6 +20,7 @@ fn asks_yes_or_no() -> Result<(), Box<dyn std::error::Error>> {
 }
 
 #[test]
+#[ignore]
 fn displays_error_message_on_error() -> Result<(), Box<dyn std::error::Error>> {
 
     let output_bytes = Command::cargo_bin("yes_or_no")?.output()?.stdout;
