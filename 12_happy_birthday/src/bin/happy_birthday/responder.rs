@@ -1,4 +1,4 @@
-use chrono::{Datelike, Local, NaiveDate, Weekday};
+use chrono::{Datelike, Local, NaiveDate};
 
 pub fn respond_to_birthday(selected: NaiveDate) -> String {
     let today = Local::now().naive_local().date();
@@ -22,12 +22,11 @@ pub fn respond_to_birthday(selected: NaiveDate) -> String {
 #[cfg(test)]
 mod responder_tests {
 
-    use chrono::{Datelike, Duration, Local, NaiveDate, Weekday};
+    use chrono::{Duration, Local};
 
     use crate::responder::respond_to_birthday;
 
     #[test]
-    #[ignore]
     fn responds_happy_birthday() {
         let today = Local::now().naive_local().date();
         let response = respond_to_birthday(today);
