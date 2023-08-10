@@ -1,3 +1,8 @@
+
+mod get_fibonacci_sequence;
+use get_fibonacci_sequence::get_fibonacci_sequence;
+
 fn main() {
-    todo!("replace this line with your code!")
+    let seq = get_fibonacci_sequence(10);
+    println!("{:?}", seq);
 }
