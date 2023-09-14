@@ -31,7 +31,7 @@ cargo test
 
 _Note: This runs both unit tests and integration tests!_
 
-In addition to just running the tests, you can check code coverage:
+In addition to running the tests, you can also check code coverage:
 ```
 cargo tarpaulin --out Html
 ```
