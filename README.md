@@ -64,7 +64,7 @@ It is highly recommended to work through them on your own because by just readin
 
 <br/>
 
-## Build Your Own "Rust Toolbox"
+## Build Your Own _"Rust Toolbox"_
 By building little Rust applications like these you are documenting how to accomplish and test different things you might want a command line utility to do.
 
 If you starting building your own portfolio of Rust cli tools then one day when you _actually want to solve some business problem_ with Rust you won't be starting from scratch and can use some of your old code and/or experiences to help you!
