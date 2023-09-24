@@ -1,5 +1,5 @@
 # rust-cli-examples
-Jim's solutions and tests to the [rust-cli-exercises](https://github.com/JimLynchCodes/rust-cli-exercises).
+Jim's solutions and tests to the [rust-cli-exercises](https://github.com/JimLynchCodes/rust-cli-exercises)!
 
 <br/>
 
