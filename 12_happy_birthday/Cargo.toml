@@ -10,3 +10,4 @@ inquire = { version = "0.6.0", features = ["date"] }
 [dev-dependencies]
 assert_cmd = "2.0.9"
 predicates = "3.0.1"
+
