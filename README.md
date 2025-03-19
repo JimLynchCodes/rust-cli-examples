@@ -16,7 +16,7 @@ Each folder in the root directory contains a completely independent Rust project
 
 First ensure you have rust and cargo installed:
 ```bash
-cago --version
+cargo --version
 ```
 
 You can then navigate into each project folder and run the cli tool:
