@@ -4,6 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+cli-table = "0.5.0"
 
 [dev-dependencies]
+assert_cmd = "2.1.2"
+predicates = "3.1.4"
 
